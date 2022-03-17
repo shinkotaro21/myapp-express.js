@@ -7,7 +7,7 @@ const location = require('./routes/location.js');
 
 app.use(express.json());
 
-app.use('/location', location);
+app.use('/todo', location);
 
 app.listen(port, () => {
     console.log('Contoh server berjalan di port ', port);
