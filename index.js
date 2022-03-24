@@ -1,17 +1,38 @@
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
+// const port = 3000
+// const fs = require('fs');
+// const userRoutes = require('./routes/user');
+// const location = require('./routes/location');
+// const productRoutes = require('./routes/product');
+
+// app.use(express.json());
+
+// app.use('/todo', location);
+// app.use('/user', userRoutes);
+// app.use('/product', productRoutes);
+
+// app.listen(port, () => {
+//     console.log('Contoh server berjalan di port ', port);
+// })
+
+const express = require('express')
+const app = express()
 const port = 3000
-const fs = require('fs');
-const userRoutes = require('./routes/user');
-const location = require('./routes/location.js');
+const locationRoutes = require('./routes/location')
+const todoRoutes = require('./routes/todo')
+const userRoutes = require("./routes/user")
+const productRoutes = require("./routes/product")
 
-app.use(express.json());
+app.use(express.json())
 
-app.use('/todo', location);
-app.use('/user', userRoutes);
+app.use('/location', locationRoutes)
+app.use('/todos', todoRoutes)
+app.use('/user', userRoutes)
+app.use('/product', productRoutes)
 
 app.listen(port, () => {
-    console.log('Contoh server berjalan di port ', port);
+    console.log(`Example app listening on port ${port}`)
 })
 
 // GET localhost:3000/location/getcities?provinceName=dki jakarta
