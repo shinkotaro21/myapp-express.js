@@ -1,12 +1,17 @@
 {
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.3",
+    "fix": "0.0.6",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "pg": "^8.7.3",
     "product": "^1.2.2",
     "products": "^3.0.3",
     "sequelize": "^6.17.0",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "them": "0.0.4",
+    "to": "^0.2.9"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

@@ -1,7 +1,7 @@
 const db = require("../config/db");
 const Product = require("../models/index").Product;
 const User = require("../models/index").User;
-// get users
+
 exports.getProducts = async (req, res) => {
     Product.findAll().then(result => {
         res.status(200).send({
