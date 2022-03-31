@@ -18,7 +18,7 @@ exports.getProducts = async (req, res) => {
 
 exports.getProductsSearch = async (req, res) => {
     User.findOne({
-        where: { id: parseInt(req.params.id) },
+        where: { id: parseInt(req.id) },
         include: {
             model: Product,
             as: 'products'
@@ -38,7 +38,7 @@ exports.getProductsSearch = async (req, res) => {
 
 exports.postProducts = async (req, res) => {
     const body = req.body;
-    const user_id = parseInt(req.params.id);
+    const user_id = req.id
     const name = body.name;
     const price = body.price;
     const quantity = body.quantity;

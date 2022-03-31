@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controller/product.controller')
-const middleware = require('../middlewares/auth')
+const middleware = require('../middlewares/auth').verify
 
-router.get('/getProducts', controller.getProducts);
-router.get('/getProductsSearch/:id', middleware.verify, controller.getProductsSearch);
-router.post('/postProducts/', middleware.verify, controller.postProducts);
+router.get('/getProducts', middleware, controller.getProducts);
+router.get('/getProductsSearch/:id', middleware, controller.getProductsSearch);
+router.post('/postProducts', middleware, controller.postProducts);
 
 module.exports = router;
